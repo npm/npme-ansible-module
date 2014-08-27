@@ -1,0 +1,19 @@
+- name: copy nginx configuration
+  sudo: true
+  notify: 'restart nginx'
+  template: >
+    src=nginx.conf.j2
+    dest=/etc/nginx/nginx.conf
+    owner=ubuntu
+    group=ubuntu
+    mode=770
+
+- name: copy couchdb configuration
+  sudo: true
+  notify: 'restart couchdb'
+  copy: >
+    src=local.ini
+    dest=/etc/couchdb/local.ini
+    owner=couchdb
+    group=couchdb
+    mode=770

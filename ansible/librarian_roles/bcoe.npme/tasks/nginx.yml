@@ -1,0 +1,5 @@
+---
+
+  - name: install nginx
+    sudo: true
+    apt: pkg=nginx state=present update_cache=yes
