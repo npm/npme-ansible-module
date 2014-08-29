@@ -1,3 +1,3 @@
 # npm Enterprise Ansible
 
-Wraps our npm Enterprise Ansible scripts in an npm module.
+Wraps npm Enterprise's Ansible scripts in an npm module.

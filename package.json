@@ -1,7 +1,7 @@
 {
   "name": "npme-ansible",
   "version": "1.0.4",
-  "description": "npmE one-step-install for Ubuntu Trusty.",
+  "description": "Wraps the npm Enterprises Ansible script.",
   "main": "lib/index.js",
   "scripts": {
     "test": "lab -c --timeout=8000"
