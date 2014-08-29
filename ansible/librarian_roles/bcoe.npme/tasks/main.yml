@@ -1,33 +1,9 @@
 ---
-# install OS dependencies.
 
-  - name: install npm@npme-beta
-    sudo: true
-    command: npm install npm@2.0.0-beta.0 -g
+  - name: install
+    include: 'install.yml'
     when: install | default(false)
 
-  - name: install ndm
-    sudo: true
-    command: npm install ndm -g
-    when: install | default(false)
-
-  - name: build redis
-    include: 'redis.yml'
-    when: install | default(false)
-
-  - name: build nginx
-    include: 'nginx.yml'
-    when: install | default(false)
-
-  - name: build npme
-    include: 'npme.yml'
-    when: install | default(false)
-
-  - name: build couchdb
-    include: 'couchdb.yml'
-    when: install | default(false)
-
-# Configure dependencies.
   - name: configure
     include: 'configure.yml'
     when: configure | default(false)

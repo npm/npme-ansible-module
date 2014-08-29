@@ -1,0 +1,13 @@
+# install OS dependencies, such as an up-to-date
+# npm, couchdb, nginx.
+---
+
+  - name: build redis
+    include: 'redis.yml'
+
+  - name: install apt packages
+    sudo: true
+    apt: pkg={{item}} state=present update_cache=yes
+    with_items:
+      - nginx
+      - couchdb

@@ -1,0 +1,27 @@
+---
+  - name: install npm@npme-beta
+    sudo: true
+    command: npm install npm@2.0.0-beta.0 -g
+
+  - name: install ndm
+    sudo: true
+    command: npm install ndm -g
+
+  - name: create npme installation directory
+    sudo: true
+    file: >
+      path=/etc/npme
+      state=directory
+      owner={{npme_owner}}
+      group={{npme_group}}
+      mode=770
+
+  - name: perform ubuntu-specific installation
+    include: 'ubuntu/install.yml'
+    when: npme_platform == "ubuntu"
+
+  # install packages and configuration that make up npmE.
+  # this requires a license.
+  - name: install npme cli
+    sudo: true
+    command: npm install @npm/npme-service-installer -g --registry={{npme_url}} --userconfig={{npme_user_config}}
