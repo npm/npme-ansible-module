@@ -12,6 +12,6 @@ galaxy_info:
       - trusty
   categories:
     - npm
-dependencies:
-  - { role: Ansibles.build-essential }
-  - { role: "laggyluke.nodejs" }
+dependencies: []
+#  - { role: Ansibles.build-essential }
+#  - { role: "laggyluke.nodejs" }

@@ -1,19 +1,30 @@
-- name: copy nginx configuration
-  sudo: true
-  notify: 'restart nginx'
-  template: >
-    src=nginx.conf.j2
-    dest=/etc/nginx/nginx.conf
-    owner=ubuntu
-    group=ubuntu
-    mode=770
+---
+  # copy configuration to location, post install.
+  # this is split into two steps, because we
+  # interview the user about environment variables
+  # in-between.
+  - name: copy nginx configuration
+    sudo: true
+    notify: 'restart nginx'
+    template: >
+      src=nginx.conf.j2
+      dest=/etc/nginx/nginx.conf
+      owner={{npme_owner}}
+      group={{npme_group}}
+      mode=770
 
-- name: copy couchdb configuration
-  sudo: true
-  notify: 'restart couchdb'
-  copy: >
-    src=local.ini
-    dest=/etc/couchdb/local.ini
-    owner=couchdb
-    group=couchdb
-    mode=770
+  - name: copy couchdb configuration
+    sudo: true
+    notify: 'restart couchdb'
+    copy: >
+      src=local.ini
+      dest=/etc/couchdb/local.ini
+      owner={{npme_owner}}
+      group={{npme_group}}
+      mode=770
+
+  # install packages and configuration that make up npmE.
+  # this requires a license.
+  - name: install npme cli
+    sudo: true
+    command: npm install @npm/npme-service-installer -g --registry={{npme_url}} --userconfig={{npme_user_config}}
