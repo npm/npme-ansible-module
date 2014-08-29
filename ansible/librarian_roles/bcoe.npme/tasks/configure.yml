@@ -22,9 +22,3 @@
       owner={{npme_owner}}
       group={{npme_group}}
       mode=770
-
-  # install packages and configuration that make up npmE.
-  # this requires a license.
-  - name: install npme cli
-    sudo: true
-    command: npm install @npm/npme-service-installer -g --registry={{npme_url}} --userconfig={{npme_user_config}}
