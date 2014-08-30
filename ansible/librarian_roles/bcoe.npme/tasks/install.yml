@@ -24,4 +24,4 @@
   # this requires a license.
   - name: install npme cli
     sudo: true
-    command: npm install @npm/npme-service-installer -g --registry={{npme_url}} --userconfig={{npme_user_config}}
+    command: npm install @npm/npme-service-installer -g --registry={{npme_url}} --userconfig={{npme_user_config}} --always-auth
