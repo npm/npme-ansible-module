@@ -2,3 +2,5 @@ npme_platform: ubuntu
 npme_user_config: /home/ubuntu/.npmrc
 npme_owner: ubuntu
 npme_group: ubuntu
+npme_couchdb_owner: couchdb
+npme_couchdb_group: couchdb

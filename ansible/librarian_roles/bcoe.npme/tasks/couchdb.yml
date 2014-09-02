@@ -1,5 +1,0 @@
----
-
-  - name: install couchdb
-    sudo: true
-    apt: pkg=couchdb state=present update_cache=yes

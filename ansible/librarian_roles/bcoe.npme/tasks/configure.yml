@@ -19,6 +19,6 @@
     copy: >
       src=local.ini
       dest=/etc/couchdb/local.ini
-      owner={{npme_owner}}
-      group={{npme_group}}
+      owner={{npme_couchdb_owner}}
+      group={{npme_couchdb_group}}
       mode=770
