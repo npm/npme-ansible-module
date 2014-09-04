@@ -4,3 +4,4 @@ npme_group: ubuntu
 npme_user_config: "/home/{{npme_owner}}/.npmrc"
 npme_couchdb_owner: couchdb
 npme_couchdb_group: couchdb
+npme_service_json_path: service.json
