@@ -26,8 +26,8 @@
     copy: >
       src=install-couch-app.sh
       dest=/etc/npme/bin/install-couch-app.sh
-      owner={{npme_couchdb_owner}}
-      group={{npme_couchdb_group}}
+      owner={{npme_owner}}
+      group={{npme_group}}
       mode=777
 
   - name: install bootstrap config
@@ -35,8 +35,8 @@
     copy: >
       src={{item}}
       dest="/etc/npme/{{item}}"
-      owner={{npme_couchdb_owner}}
-      group={{npme_couchdb_group}}
+      owner={{npme_owner}}
+      group={{npme_group}}
       mode=755
     with_items:
       - package.json
