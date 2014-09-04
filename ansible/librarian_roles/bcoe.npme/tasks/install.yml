@@ -40,7 +40,7 @@
 
   - name: install ndm
     sudo: true
-    command: "{{npme_npm_bin}}" install ndm chdir=/etc/npme"
+    command: "{{npme_npm_bin}} install ndm chdir=/etc/npme"
 
   - name: perform ubuntu-specific installation
     include: 'ubuntu/install.yml'
