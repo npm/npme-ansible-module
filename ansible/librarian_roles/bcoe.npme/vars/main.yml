@@ -1,6 +1,6 @@
 npme_platform: ubuntu
-npme_user_config: /home/ubuntu/.npmrc
 npme_owner: ubuntu
 npme_group: ubuntu
+npme_user_config: "/home/{{npme_owner}}/.npmrc"
 npme_couchdb_owner: couchdb
 npme_couchdb_group: couchdb

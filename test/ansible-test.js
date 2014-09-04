@@ -4,18 +4,34 @@ var Lab = require('lab'),
 
 lab.experiment('Ansible', function() {
 
-  lab.experiment('run', function() {
-    lab.it('executes ansible command with appropriate working directory', function(done) {
+  lab.experiment('install', function() {
+    lab.it('executes install command with appropriate working directory', function(done) {
       var ansible = new Ansible({
         util: {
           exec: function(command, opts, cb) {
-            Lab.expect(opts.cwd).to.match(/npme-ansible\/ansible/);
+            Lab.expect(opts.cwd).to.match(/npme-ansible-module\/ansible/);
             done();
           }
         }
       });
 
       ansible.install(function() {})
+    });
+  });
+
+  lab.experiment('configure', function() {
+    lab.it('executes configure command with appropriate working directory', function(done) {
+      var ansible = new Ansible({
+        util: {
+          exec: function(command, opts, cb) {
+            console.log(command);
+            Lab.expect(opts.cwd).to.match(/npme-ansible-module\/ansible/);
+            done();
+          }
+        }
+      });
+
+      ansible.configure('/foo/bar', function() {})
     });
   });
 
