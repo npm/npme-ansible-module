@@ -7,21 +7,41 @@
     sudo: true
     command: npm install ndm -g
 
-  - name: create npme installation directory
+  - name: create npme directories
     sudo: true
     file: >
-      path=/etc/npme
+      path={{item}}
       state=directory
       owner={{npme_owner}}
       group={{npme_group}}
-      mode=770
+      mode=755
+    with_items:
+      - /etc/npme
+      - /etc/npme/bin
+      - /etc/npme/node_modules
+      - /etc/npme/logs
+
+  - name: install couch-app bin
+    sudo: true
+    copy: >
+      src=install-couch-app.sh
+      dest=/etc/npme/bin/install-couch-app.sh
+      owner={{npme_owner}}
+      group={{npme_group}}
+      mode=777
+
+  - name: install bootstrap config
+    sudo: true
+    copy: >
+      src={{item}}
+      dest="/etc/npme/{{item}}"
+      owner={{npme_owner}}
+      group={{npme_group}}
+      mode=755
+    with_items:
+      - package.json
+      - "{{npme_service_json_path}}"
 
   - name: perform ubuntu-specific installation
     include: 'ubuntu/install.yml'
     when: npme_platform == "ubuntu"
-
-  # install packages and configuration that make up npmE.
-  # this requires a license.
-  - name: install npme cli
-    sudo: true
-    command: npm install @npm/npme-service-installer -g --registry={{npme_url}} --userconfig={{npme_user_config}} --always-auth
