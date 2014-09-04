@@ -1,12 +1,4 @@
 ---
-  - name: install npm@npme-beta
-    sudo: true
-    command: npm install npm@2.0.0-beta.0 -g
-
-  - name: install ndm
-    sudo: true
-    command: npm install ndm -g
-
   - name: create npme directories
     sudo: true
     file: >
@@ -41,6 +33,14 @@
     with_items:
       - package.json
       - "{{npme_service_json_path}}"
+
+  - name: install npm@npme-beta
+    sudo: true
+    command: "{{npme_npm_bin}} install {{npme_npm_version}} chdir=/etc/npme"
+
+  - name: install ndm
+    sudo: true
+    command: "{{npme_npm_bin}}" install ndm chdir=/etc/npme"
 
   - name: perform ubuntu-specific installation
     include: 'ubuntu/install.yml'
