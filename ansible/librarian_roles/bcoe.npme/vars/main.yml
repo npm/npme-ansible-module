@@ -7,3 +7,4 @@ npme_couchdb_group: couchdb
 npme_service_json_path: service.json
 npme_npm_version: npm@2.0.0-beta.0
 npme_npm_bin: npm
+npme_nginx_user: root

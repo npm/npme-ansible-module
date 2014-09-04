@@ -35,11 +35,9 @@
       - "{{npme_service_json_path}}"
 
   - name: install npm@npme-beta
-    sudo: true
     command: "{{npme_npm_bin}} install {{npme_npm_version}} chdir=/etc/npme"
 
   - name: install ndm
-    sudo: true
     command: "{{npme_npm_bin}} install ndm chdir=/etc/npme"
 
   - name: perform ubuntu-specific installation
