@@ -1,6 +1,3 @@
-# by default run Ansible script in install mode:
-install: true
-
 # what platform are we building for?
 npme_platform: trusty
 
