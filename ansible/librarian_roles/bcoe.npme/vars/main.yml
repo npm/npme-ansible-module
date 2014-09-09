@@ -15,9 +15,6 @@ npme_npm_bin: npm
 # nginx build information.
 npme_nginx_user: root
 
-# node build information.
-npme_node_version: 0.10.31
-
 # CouchDB build information.
 npme_couchdb_owner: couchdb
 npme_couchdb_group: couchdb
