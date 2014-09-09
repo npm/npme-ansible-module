@@ -2,8 +2,8 @@
 npme_platform: trusty
 
 # npme build information.
-npme_owner: ubuntu
-npme_group: ubuntu
+npme_owner: npme
+npme_group: npme
 npme_home_directory: "/home/{{npme_owner}}"
 npme_user_config: "{{npme_home_directory}}/.npmrc"
 npme_service_json_path: service.json

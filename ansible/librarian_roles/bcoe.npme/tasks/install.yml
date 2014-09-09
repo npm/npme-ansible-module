@@ -1,4 +1,13 @@
 ---
+  - name: create npme user
+    sudo: true
+    user: >
+      name={{npme_owner}}
+      group={{npme_group}}
+      createhome=yes
+      shell=/bin/bash
+      system=yes
+
   - name: create npme directories
     sudo: true
     file: >
