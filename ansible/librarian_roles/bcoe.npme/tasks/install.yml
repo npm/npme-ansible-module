@@ -1,4 +1,8 @@
 ---
+  - name: create npme group
+    sudo: true
+    group: name={{npme_group}} state=present
+
   - name: create npme user
     sudo: true
     user: >
