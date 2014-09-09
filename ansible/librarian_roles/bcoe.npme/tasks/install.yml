@@ -35,7 +35,7 @@
       - "{{npme_service_json_path}}"
 
   - name: perform centos65-specific installation
-    include: 'centos/install.yml'
+    include: 'centos65/install.yml'
     when: npme_platform == "centos"
 
   - name: install npm@npme-beta
