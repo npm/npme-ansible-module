@@ -1,0 +1,52 @@
+---
+  - name: install dependencies
+    yum: name={{ item }} state=installed
+    with_items:
+      - autoconf
+      - autoconf-archive
+      - automake
+      - curl-devel
+      - erlang-asn1
+      - erlang-erts
+      - erlang-eunit
+      - erlang-os_mon
+      - erlang-xmerl
+      - help2man
+      - js-devel
+      - libicu-devel
+      - libtool
+      - perl-Test-Harness
+    tags: install_dependencies
+
+  - name: download couchdb tarball
+    get_url: "url={{npme_couchdb_tarball_url}} dest={{npme_home_directory}}"
+
+  - name: unarchive
+    command: "chdir={{npme_home_directory}} tar -xvzf {{npme_couchdb_tarball}}"
+
+  - name: build
+    shell: "cd {{npme_couchdb_directory}}; make distclean; ./configure --with-erlang=/usr/lib64/erlang/usr/include; make && make install"
+
+  - name: create couchdb user
+    user: name=couchdb createhome=no shell=/bin/bash system=yes
+    tags: add_user
+
+  - name: Change the ownership of the couchdb directories
+    file: name={{item}} owner=couchdb group=couchdb mode=0770
+    with_items:
+      - /usr/local/etc/couchdb
+      - /usr/local/var/lib/couchdb
+      - /usr/local/var/log/couchdb
+      - /usr/local/var/run/couchdb
+    tags: change_ownership
+
+  - name: install init.d script
+    command: cp /usr/local/etc/rc.d/couchdb /etc/init.d/
+
+  - name: make couchdb run at boot
+    service: name=couchdb state=running enabled=yes
+
+  - name: remove couchdb tarball
+    file: >
+      path="{{npme_home_directory}}/{{npme_couchdb_tarball}}"
+      state=absent

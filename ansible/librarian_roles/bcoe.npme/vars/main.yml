@@ -1,10 +1,18 @@
-npme_platform: ubuntu
+npme_platform: trusty
 npme_owner: ubuntu
 npme_group: ubuntu
-npme_user_config: "/home/{{npme_owner}}/.npmrc"
+npme_home_directory: "/home/{{npme_owner}}"
+npme_user_config: "{{npme_home_directory}}/.npmrc"
 npme_couchdb_owner: couchdb
 npme_couchdb_group: couchdb
 npme_service_json_path: service.json
-npme_npm_version: npm@2.0.0-beta.3
+npme_npm_version: npm@2.0.0-beta.0
 npme_npm_bin: npm
 npme_nginx_user: root
+
+npme_node_version: 0.10.31
+
+npme_couchdb_version: apache-couchdb-1.6.0
+npme_couchdb_directory: "{{npme_home_directory}}/{{npme_couchdb_version}}"
+npme_couchdb_tarball: "{{npme_couchdb_version}}.tar.gz"
+npme_couchdb_tarball_url: "http://www.eu.apache.org/dist/couchdb/source/1.6.0/{{npme_couchdb_tarball}}"

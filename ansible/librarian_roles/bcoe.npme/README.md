@@ -35,4 +35,8 @@ role "bcoe.npme"
 8. Update `inventory` to point to the blank Ubuntu image.
 9. Run: `ansible-playbook ./deploy.yml -i inventory`.
 
+# Passwordless sudo
+
+Ansible expects to be able to run with passwordless sudo.
+
 That's all there is to it! patches welcome.

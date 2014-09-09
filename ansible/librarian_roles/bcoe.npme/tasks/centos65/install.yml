@@ -1,0 +1,23 @@
+---
+
+  - name: build-essentials
+    yum:
+      name: "{{item}}"
+      state: present
+      with_items: buildessential_packages
+        - autoconf
+        - gcc
+        - bison
+        - flex
+        - gcc-c++
+        - gettext
+        - kernel-devel
+        - make
+        - m4
+        - ncurses-devel
+
+  - name: install nodejs
+    include: 'nodejs.yml'
+
+  - name: install couchdb
+    include: 'couchdb.yml'
