@@ -1,18 +1,34 @@
+# by default run Ansible script in install mode:
+install: true
+
+# what platform are we building for?
 npme_platform: trusty
+
+# npme build information.
 npme_owner: ubuntu
 npme_group: ubuntu
 npme_home_directory: "/home/{{npme_owner}}"
 npme_user_config: "{{npme_home_directory}}/.npmrc"
-npme_couchdb_owner: couchdb
-npme_couchdb_group: couchdb
 npme_service_json_path: service.json
+
+# npm build information.
 npme_npm_version: npm@2.0.0-beta.0
 npme_npm_bin: npm
+
+# nginx build information.
 npme_nginx_user: root
 
+# node build information.
 npme_node_version: 0.10.31
 
+# CouchDB build information.
+npme_couchdb_owner: couchdb
+npme_couchdb_group: couchdb
 npme_couchdb_version: apache-couchdb-1.6.0
 npme_couchdb_directory: "{{npme_home_directory}}/{{npme_couchdb_version}}"
 npme_couchdb_tarball: "{{npme_couchdb_version}}.tar.gz"
 npme_couchdb_tarball_url: "http://www.eu.apache.org/dist/couchdb/source/1.6.0/{{npme_couchdb_tarball}}"
+
+# license information
+npme_license_key: 6115d9c6-3010-43e4-86ad-b7ec829b8bf5
+npme_license_email: ben@example.com
