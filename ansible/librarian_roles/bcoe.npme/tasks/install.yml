@@ -19,7 +19,7 @@
       state=directory
       owner={{npme_owner}}
       group={{npme_group}}
-      mode=755
+      mode=757
     with_items:
       - /etc/npme
       - /etc/npme/bin
