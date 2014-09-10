@@ -24,3 +24,7 @@
   - name: save iptables
     sudo: true
     command: service iptables save
+
+  - name: restart redis
+    sudo: true
+    service: name=redis state=restarted
