@@ -1,4 +1,7 @@
 ---
+  - include_vars: centos65.yml
+    when: npme_platform == "centos65"
+
   # copy configuration to location, post install.
   # this is split into two steps, because we
   # interview the user about environment variables
@@ -18,7 +21,7 @@
     notify: 'restart couchdb'
     copy: >
       src=local.ini
-      dest=/etc/couchdb/local.ini
+      dest={{npme_couchdb_config_path}}/local.ini
       owner={{npme_couchdb_owner}}
       group={{npme_couchdb_group}}
       mode=770

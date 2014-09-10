@@ -12,5 +12,4 @@ galaxy_info:
       - trusty
   categories:
     - npm
-dependencies:
-  - { role: Ansibles.build-essential }
+dependencies: []

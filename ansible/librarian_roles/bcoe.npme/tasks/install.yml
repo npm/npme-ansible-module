@@ -1,4 +1,17 @@
 ---
+  - name: create npme group
+    sudo: true
+    group: name={{npme_group}} state=present
+
+  - name: create npme user
+    sudo: true
+    user: >
+      name={{npme_owner}}
+      group={{npme_group}}
+      createhome=yes
+      shell=/bin/bash
+      system=yes
+
   - name: create npme directories
     sudo: true
     file: >
@@ -8,10 +21,20 @@
       group={{npme_group}}
       mode=755
     with_items:
+      - /etc/npme/logs
+
+  - name: create npme directories
+    sudo: true
+    file: >
+      path={{item}}
+      state=directory
+      owner={{npme_owner}}
+      group={{npme_group}}
+      mode=777
+    with_items:
       - /etc/npme
       - /etc/npme/bin
       - /etc/npme/node_modules
-      - /etc/npme/logs
 
   - name: install couch-app bin
     sudo: true
@@ -29,17 +52,23 @@
       dest="/etc/npme/{{item}}"
       owner={{npme_owner}}
       group={{npme_group}}
-      mode=755
+      mode=777
     with_items:
       - package.json
       - "{{npme_service_json_path}}"
 
+  - name: perform centos65-specific installation
+    include: 'centos65/install.yml'
+    when: npme_platform == "centos65"
+
   - name: install npm@npme-beta
+    sudo: true
     command: "{{npme_npm_bin}} install {{npme_npm_version}} chdir=/etc/npme"
 
   - name: install ndm
+    sudo: true
     command: "{{npme_npm_bin}} install ndm chdir=/etc/npme"
 
-  - name: perform ubuntu-specific installation
-    include: 'ubuntu/install.yml'
-    when: npme_platform == "ubuntu"
+  - name: perform trusty-specific installation
+    include: 'trusty/install.yml'
+    when: npme_platform == "trusty"
