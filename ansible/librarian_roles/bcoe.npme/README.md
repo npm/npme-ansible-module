@@ -11,12 +11,9 @@ npmE Ansible installs OS-specific dependencies for npm Enteprise:
 
 _npmE Ansible_ uses the Ansible deployment tool to install the dependencies for npmE on a fresh vm.
 
-4. Create a new directory to use for your Ansible deployments.
-5. Copy the example `deploy.yml`, `Ansiblefile`, `ansible.cfg`, and `inventory` to this directory.
-6. Run: `ansible-librarian install` to install Ansible dependencies.
-7. Create a blank Ubuntu image.
-8. Update `inventory` to point to the blank Ubuntu image.
-9. Run: `ansible-playbook ./deploy.yml -i inventory`.
+1. ensure that Ansible is installed on your remote server.
+2. update the `inventory` file to point to the remote server in question.
+3. run `ansible-playbook ./deploy.yml -i inventory` to setup the remote server.
 
 # Passwordless sudo
 

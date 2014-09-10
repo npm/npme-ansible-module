@@ -15,6 +15,7 @@ npme_npm_bin: npm
 npme_nginx_user: root
 
 # CouchDB build information.
+npme_couchdb_config_path: /etc/couchdb
 npme_couchdb_owner: couchdb
 npme_couchdb_group: couchdb
 npme_couchdb_version: apache-couchdb-1.6.0
