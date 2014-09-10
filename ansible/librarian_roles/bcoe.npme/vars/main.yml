@@ -5,11 +5,10 @@ npme_platform: trusty
 npme_owner: npme
 npme_group: npme
 npme_home_directory: "/home/{{npme_owner}}"
-npme_user_config: "{{npme_home_directory}}/.npmrc"
 npme_service_json_path: service.json
 
 # npm build information.
-npme_npm_version: npm@2.0.0-beta.0
+npme_npm_version: npm@2.0.0-beta.3
 npme_npm_bin: npm
 
 # nginx build information.
