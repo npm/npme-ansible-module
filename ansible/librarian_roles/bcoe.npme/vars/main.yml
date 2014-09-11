@@ -13,6 +13,8 @@ npme_npm_bin: npm
 
 # nginx build information.
 npme_nginx_user: root
+npme_nginx_config_path: /etc/nginx
+npme_nginx_log_path: /var/log/nginx
 
 # CouchDB build information.
 npme_couchdb_config_path: /etc/couchdb

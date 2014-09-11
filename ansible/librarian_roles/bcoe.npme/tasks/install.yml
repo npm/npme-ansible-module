@@ -2,6 +2,7 @@
   - name: create npme group
     sudo: true
     group: name={{npme_group}} state=present
+    ignore_errors: true
 
   - name: create npme user
     sudo: true
@@ -11,6 +12,7 @@
       createhome=yes
       shell=/bin/bash
       system=yes
+    ignore_errors: true
 
   - name: create npme directories
     sudo: true
