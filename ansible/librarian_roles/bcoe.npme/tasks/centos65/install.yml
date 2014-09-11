@@ -20,7 +20,7 @@
 
   - name: add 8080 to iptables
     sudo: true
-    command: iptables -I INPUT 5 -i eth0 -p tcp --dport 8080 -m state --state NEW,ESTABLISHED -j ACCEPT
+    command: iptables -I INPUT 1 -i eth0 -p tcp --dport 8080 -m state --state NEW,ESTABLISHED -j ACCEPT
     ignore_errors: yes
 
   - name: save iptables
