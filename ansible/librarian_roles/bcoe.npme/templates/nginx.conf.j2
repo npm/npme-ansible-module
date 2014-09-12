@@ -18,11 +18,12 @@ http {
     access_log  {{npme_nginx_log_path}}/access.log  main;
     sendfile        on;
     keepalive_timeout  65;
+    client_max_body_size 256M;
 
     server {
-        listen       8000 default_server;
-        location / {
-          root {{binary_directory}};
-        }
+      listen       8000 default_server;
+      location / {
+        root {{binary_directory}};
+      }
     }
 }
