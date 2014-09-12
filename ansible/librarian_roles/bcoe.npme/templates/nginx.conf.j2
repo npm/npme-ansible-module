@@ -20,9 +20,10 @@ http {
     keepalive_timeout  65;
 
     server {
-        listen       8000 default_server;
-        location / {
-          root {{binary_directory}};
-        }
+      client_max_body_size 256M;
+      listen       8000 default_server;
+      location / {
+        root {{binary_directory}};
+      }
     }
 }
