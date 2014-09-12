@@ -16,7 +16,6 @@
       - js-devel
       - libicu-devel
       - libtool
-      - perl-Test-Harness
     tags: install_dependencies
 
   - name: download couchdb tarball
