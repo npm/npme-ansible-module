@@ -1,6 +1,6 @@
 {
   "name": "npme-ansible",
-  "version": "1.0.54",
+  "version": "1.0.55",
   "description": "Wraps the npm Enterprises Ansible script.",
   "main": "lib/index.js",
   "scripts": {
