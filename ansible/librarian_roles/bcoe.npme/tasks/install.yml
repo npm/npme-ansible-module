@@ -74,3 +74,11 @@
   - name: perform trusty-specific installation
     include: 'trusty/install.yml'
     when: npme_platform == "trusty"
+
+  - name: create db directory
+    sudo: true
+    file: >
+      path=/etc/npme/couchdb
+      state=directory
+      owner={{npme_couchdb_owner}}
+      group={{npme_couchdb_group}}
