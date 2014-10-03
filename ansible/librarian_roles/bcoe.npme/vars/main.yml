@@ -8,7 +8,7 @@ npme_home_directory: "/home/{{npme_owner}}"
 npme_service_json_path: service.json
 
 # npm build information.
-npme_npm_version: npm@2.0.0-beta.3
+npme_npm_version: npm@latest
 npme_npm_bin: npm
 
 # nginx build information.
