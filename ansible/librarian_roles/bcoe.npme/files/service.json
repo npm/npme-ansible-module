@@ -73,7 +73,7 @@
       "default": "/etc/npme/packages",
       "description": "folder on HD to store package binaries"
     },
-    "--auth-fetch": "false",
+    "--auth-fetch": "true",
     "--shared-fetch-secret": "change-me-to-a-secure-token"
   }
 }
