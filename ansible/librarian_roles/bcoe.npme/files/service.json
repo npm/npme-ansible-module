@@ -8,9 +8,7 @@
     "env": {},
     "args": {
       "start": "",
-      "--port": "5000",
-      "--authentication-method": "github",
-      "--authorization-method": "github"
+      "--port": "5000"
     }
   },
   "policy-follower": {
@@ -74,6 +72,9 @@
       "description": "folder on HD to store package binaries"
     },
     "--auth-fetch": "true",
-    "--shared-fetch-secret": "change-me-to-a-secure-token"
+    "--shared-fetch-secret": "change-me-to-a-secure-token",
+    "--authentication-method": "github",
+    "--authorization-method": "github",
+    "--session-handler": "github"
   }
 }
