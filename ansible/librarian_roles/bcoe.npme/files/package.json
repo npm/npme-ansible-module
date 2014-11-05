@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "@npm/npm-auth-ws": "~1.1.0",
-    "npm-registry-couchapp": "~2.6.3",
+    "npm-registry-couchapp": "~2.6.4",
     "@npm/package-whitelist": "~0.0.2",
     "@npm/policy-follower": "~0.0.9",
     "@npm/registry-frontdoor": "~1.1.0",
