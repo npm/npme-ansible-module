@@ -55,7 +55,7 @@
   },
   "env": {},
   "args": {
-    "--front-door-host": {
+    "--registry-frontdoor-url": {
       "default": "http://npm-enterprise.example.com:8080",
       "description": "full url of front-facing host that npm Enterprise will run on. Include 'http' and ':8080'."
     },
