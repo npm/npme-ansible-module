@@ -1,19 +1,19 @@
 {
   "name": "@npm/npm-enterprise-services",
   "description": "npm-on-prem deployment app.",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "author": "npm",
   "bugs": {
     "url": "https://github.com/npm/npm-on-prem/issues"
   },
   "dependencies": {
-    "@npm/npm-auth-ws": "~1.1.0",
-    "npm-registry-couchapp": "~2.6.5",
+    "@npm/npm-auth-ws": "~2.0.0",
+    "npm-registry-couchapp": "~2.6.7",
     "@npm/package-whitelist": "~0.0.2",
-    "@npm/policy-follower": "~0.0.9",
-    "@npm/registry-frontdoor": "~1.1.0",
-    "@npm/validate-and-store": "~1.0.0",
-    "ndm": "^3.5.5"
+    "@npm/policy-follower": "~0.0.13",
+    "@npm/registry-frontdoor": "~2.1.0",
+    "@npm/validate-and-store": "~2.0.0",
+    "ndm": "^3.9.0"
   },
   "devDependencies": {},
   "homepage": "https://github.com/npm/npm-enterprise-services",
