@@ -28,3 +28,38 @@
       owner={{npme_couchdb_owner}}
       group={{npme_couchdb_group}}
       mode=770
+
+  - name: create npme directories
+    sudo: true
+    file: >
+      path={{item}}
+      state=directory
+      owner={{npme_owner}}
+      group={{npme_group}}
+      mode=755
+      recurse=yes
+    with_items:
+      - /etc/npme
+      - /etc/npme/bin
+      - /etc/npme/node_modules
+
+  - name: chown db directory
+    sudo: true
+    file: >
+      path=/etc/npme/couchdb
+      state=directory
+      owner={{npme_couchdb_owner}}
+      group={{npme_couchdb_group}}
+      mode=755
+      recurse=yes
+
+  - name: more restrictive permissions
+    sudo: true
+    file: >
+      path="/etc/npme/{{item}}"
+      owner={{npme_owner}}
+      group={{npme_group}}
+      mode=644
+    with_items:
+      - package.json
+      - "{{npme_service_json_path}}"

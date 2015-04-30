@@ -32,7 +32,7 @@
       state=directory
       owner={{npme_owner}}
       group={{npme_group}}
-      mode=755
+      mode=777
     with_items:
       - /etc/npme
       - /etc/npme/bin
@@ -54,7 +54,7 @@
       dest="/etc/npme/{{item}}"
       owner={{npme_owner}}
       group={{npme_group}}
-      mode=644
+      mode=777
     with_items:
       - package.json
       - "{{npme_service_json_path}}"
