@@ -4,7 +4,6 @@
     yum: name={{ item }} state=installed
     with_items:
       - autoconf
-      - autoconf-archive
       - automake
       - curl-devel
       - erlang-asn1
