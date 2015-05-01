@@ -12,7 +12,7 @@ npme_npm_version: npm@latest
 npme_npm_bin: npm
 
 # nginx build information.
-npme_nginx_user: root
+npme_nginx_user: npme
 npme_nginx_config_path: /etc/nginx
 npme_nginx_log_path: /var/log/nginx
 
