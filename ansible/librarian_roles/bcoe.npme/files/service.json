@@ -77,7 +77,6 @@
     },
     "--read-through-cache": "false",
     "--auth-fetch": "true",
-    "--shared-fetch-secret": "change-me-to-a-secure-token",
     "--authentication-method": "github",
     "--authorization-method": "github",
     "--session-handler": "github"
