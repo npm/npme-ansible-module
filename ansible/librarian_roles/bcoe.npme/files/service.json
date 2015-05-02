@@ -73,7 +73,7 @@
     },
     "--shared-fetch-secret": {
       "default": "{{uuid}}",
-      "description": "used to fetch package-json between internal services"
+      "description": "secret used between internal services (probably leave as is)"
     },
     "--read-through-cache": "false",
     "--auth-fetch": "true",
