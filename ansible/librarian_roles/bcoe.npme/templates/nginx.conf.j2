@@ -21,7 +21,7 @@ http {
     client_max_body_size 256M;
 
     server {
-      listen       8000 default_server;
+      listen       127.0.0.1:8000 default_server;
       location / {
         root {{binary_directory}};
       }
