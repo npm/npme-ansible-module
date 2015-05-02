@@ -71,6 +71,11 @@
       "default": "/etc/npme/packages",
       "description": "folder on HD to store package binaries"
     },
+    "--shared-fetch-secret": {
+      "default": "{{uuid}}",
+      "description": "used to fetch package-json between internal services"
+    },
+    "--read-through-cache": "false",
     "--auth-fetch": "true",
     "--shared-fetch-secret": "change-me-to-a-secure-token",
     "--authentication-method": "github",
