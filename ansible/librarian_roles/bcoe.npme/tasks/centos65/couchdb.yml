@@ -1,6 +1,7 @@
 ---
   - name: install dependencies
     sudo: yes
+    ignore_errors: true
     yum: name={{ item }} state=installed
     with_items:
       - autoconf
