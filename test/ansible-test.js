@@ -24,7 +24,6 @@ lab.experiment('Ansible', function() {
       var ansible = new Ansible({
         util: {
           exec: function(command, opts, cb) {
-            console.log(command);
             Lab.expect(opts.cwd).to.match(/npme-ansible-module\/ansible/);
             done();
           }
