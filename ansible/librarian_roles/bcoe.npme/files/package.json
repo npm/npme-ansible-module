@@ -9,10 +9,10 @@
   "dependencies": {
     "@npm/npm-auth-ws": "~2.0.3",
     "npm-registry-couchapp": "~2.6.7",
-    "@npm/package-whitelist": "~0.0.2",
-    "@npm/policy-follower": "~0.0.15",
-    "@npm/registry-frontdoor": "~2.1.5",
-    "@npm/validate-and-store": "~2.0.1",
+    "@npm/package-whitelist": "~0.0.4",
+    "@npm/policy-follower": "~0.0.20",
+    "@npm/registry-frontdoor": "~2.1.6",
+    "@npm/validate-and-store": "~2.0.2",
     "ndm": "^3.9.0"
   },
   "devDependencies": {},
